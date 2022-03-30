@@ -3,11 +3,11 @@ const { SlashCommandBuilder } = require('@discordjs/builders');
 const { MessageActionRow, MessageButton } = require('discord.js');
 
 module.exports = {
-  name: "links",
-  description: "Usefull links",
+  name: "resources",
+  description: "Usefull resources",
   data: new SlashCommandBuilder()
-    .setName('links')
-    .setDescription('Usefull links'),
+    .setName('resources')
+    .setDescription('Usefull resources'),
 
   async execute(interaction) {
     const links = new MessageActionRow()
@@ -17,20 +17,25 @@ module.exports = {
           .setLabel('Join the support server!')
           .setStyle('LINK')
           .setEmoji('913140065922863114')
-          .setURL('https://discord.gg/Fkjgn8WsyH'),
+          .setURL('https://discord.gg/9WyKP5vGcv'),
         new MessageButton()
           .setLabel('Rooms\' main page')
           .setStyle('LINK')
-          .setEmoji('<:rooms:958176785743355995>')
+          .setEmoji('958176785743355995')
           .setURL('https://rooms.cool-sidd.repl.co'),
+        new MessageButton()
+          .setLabel('Rooms app page')
+          .setStyle('LINK')
+          .setEmoji('958176785743355995')
+          .setURL('https://rooms.cool-sidd.repl.co/app'),
         new MessageButton()
           .setLabel('Source code')
           .setStyle('LINK')
-          .setEmoji('913138957158584380')
-          .setURL('https://github.com/Aspect-for-Discord/Aspect/tree/main'),
+          .setEmoji('958177481523867690')
+          .setURL('https://github.com/uh-Sid/rooms-manager/tree/main'),
       );
 
-    await interaction.reply({ content: `Below are some useful links :thumbsup:`, components: [links] });
+    await interaction.reply({ content: `Below are some useful resources :thumbsup:`, components: [links] });
   }
 
 }

@@ -1,0 +1,182 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+html,
+body{
+  margin: 0px;
+  overflow: hidden;
+}
+
+div{
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  background: radial-gradient(circle, #131a27 0%, #1d2635 100%);
+  transition: 500ms ease-in-out;
+    animation: hueRotate 1s ease-in-out 3s infinite;
+
+  overflow: hidden;
+}
+
+.wrap{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+a {
+  color: #2f80ec;
+  text-shadow: none;
+}
+
+h2{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: 150px;
+  font-size: 32px;
+  text-transform: uppercase;
+  transform: translate(-50%, -50%);
+  display: block;
+  color: #1d2635;
+  font-weight: 300;
+  font-family: 'Poppins';
+  text-shadow: 0px 0px 4px #1d2635;
+  animation: fadeInText 3s ease-in  forwards, flicker4 5s linear  infinite;
+}
+
+#svgWrap_1, #svgWrap_2 {
+    position: absolute;
+    height: auto;
+    width: 600px;
+    max-width: 100%;
+    top: calc(50% - 60px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#svgWrap_1,
+#svgWrap_2,
+div{
+}
+
+#id1_1,
+#id2_1,
+#id3_1{
+  stroke: #2f80ec;
+  stroke-width: 3px;
+  fill: transparent;
+  filter: url(#glow);
+}
+
+#id1_2,
+#id2_2,
+#id3_2{
+  stroke: #1d2635;
+  stroke-width: 3px;
+  fill: transparent;
+  filter: url(#glow);
+}
+
+#id3_1{
+  stroke-dasharray: 940px;
+  stroke-dashoffset: -940px;
+  animation: drawLine3 2.5s ease-in-out 0s forwards, flicker3 4s linear 4s infinite;
+}
+
+#id2_1{
+  stroke-dasharray: 735px;
+  stroke-dashoffset: -735px;
+  animation: drawLine2 2.5s ease-in-out 0.5s forwards, flicker2 4s linear 4.5s infinite;
+}
+
+#id1_1{
+  stroke-dasharray: 940px;
+  stroke-dashoffset: -940px;
+  animation: drawLine1 2.5s ease-in-out 1s forwards, flicker1 4s linear 5s infinite;
+}
+
+@keyframes drawLine1 {
+  0%  {stroke-dashoffset: -940px;}
+  100%{stroke-dashoffset: 0px;}
+}
+
+@keyframes drawLine2 {
+  0%  {stroke-dashoffset: -735px;}
+  100%{stroke-dashoffset: 0px;}
+}
+
+@keyframes drawLine3 {
+  0%  {stroke-dashoffset: -940px;}
+  100%{stroke-dashoffset: 0px;}
+}
+
+@keyframes flicker1{
+  0%  {stroke: #2f80ec;}
+  1%  {stroke: transparent;}
+  3%  {stroke: transparent;}
+  4%  {stroke: #2f80ec;}
+  6%  {stroke: #2f80ec;}
+  7%  {stroke: transparent;}
+  13% {stroke: transparent;}
+  14% {stroke: #2f80ec;}
+  100%{stroke: #2f80ec;}
+}
+
+@keyframes flicker2{
+  0%  {stroke: #2f80ec;}
+  50% {stroke: #2f80ec;}
+  51% {stroke: transparent;}
+  61% {stroke: transparent;}
+  62% {stroke: #2f80ec;}
+  100%{stroke: #2f80ec;}
+}
+
+@keyframes flicker3{
+  0%  {stroke: #2f80ec;}
+  1%  {stroke: transparent;}
+  10% {stroke: transparent;}
+  11% {stroke: #2f80ec;}
+  40% {stroke: #2f80ec;}
+  41% {stroke: transparent;}
+  45% {stroke: transparent;}
+  46% {stroke: #2f80ec;}
+  100%{stroke: #2f80ec;}
+}
+
+@keyframes flicker4{
+  0%  {color: #2f80ec;text-shadow:0px 0px 4px #2f80ec;}
+  30% {color: #2f80ec;text-shadow:0px 0px 4px #2f80ec;}
+  31% {color: #1d2635;text-shadow:0px 0px 4px #1d2635;}
+  32% {color: #2f80ec;text-shadow:0px 0px 4px #2f80ec;}
+  36% {color: #2f80ec;text-shadow:0px 0px 4px #2f80ec;}
+  37% {color: #1d2635;text-shadow:0px 0px 4px #1d2635;}
+  41% {color: #1d2635;text-shadow:0px 0px 4px #1d2635;}
+  42% {color: #2f80ec;text-shadow:0px 0px 4px #2f80ec;}
+  85% {color: #2f80ec;text-shadow:0px 0px 4px #2f80ec;}
+  86% {color: #1d2635;text-shadow:0px 0px 4px #1d2635;}
+  95% {color: #1d2635;text-shadow:0px 0px 4px #1d2635;}
+  96% {color: #2f80ec;text-shadow:0px 0px 4px #2f80ec;}
+  100%{color: #2f80ec;text-shadow:0px 0px 4px #2f80ec;}
+}
+
+@keyframes fadeInText{
+  1%  {color: #1d2635;text-shadow:0px 0px 4px #1d2635;}
+  70% {color: #131a27;text-shadow:0px 0px 14px #131a27;}
+  100%{color: #2f80ec;text-shadow:0px 0px 4px #2f80ec;}
+}
+
+@keyframes hueRotate{
+  0%  {
+  background: radial-gradient(circle, #131a27 0%, black 100%);
+  }
+  50%  {
+  background: radial-gradient(circle, #1d2635 0%, black 100%);
+  }
+  100%  {
+  background: radial-gradient(circle, #131a27 0%, black 100%);
+  }
+}

@@ -1,0 +1,116 @@
+<html lang="en"><head>
+	<meta charset="UTF-8">
+	<title>Settings</title>
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/css/dash.css">
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body onload="load()">
+	<section class="py-5 my-5">
+		<div class="container" style="display: block;">
+			<h1 class="mb-5">Settings</h1>
+			<div style="background-color: var(--main-dark)" class=" shadow rounded-lg d-block d-sm-flex">
+				<div class="profile-tab-nav">
+					<div class="p-4">
+						<div class="img-circle text-center mb-3">
+							<img onclick="avatar()" alt="Avatar" id="avatar-preview" class="shadow">
+						</div>
+						<h4 class="name text-center">--</h4>
+					</div>
+					<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+						<a class="nav-link active" id="account-tab" data-toggle="pill" href="#account" role="tab" aria-controls="account" aria-selected="true">
+							<i class="fa fa-home text-center mr-1"></i> 
+							Personal Info
+						</a>
+						
+
+
+						<a class="nav-link" id="notification-tab" data-toggle="pill" href="#notification" role="tab" aria-controls="notification" aria-selected="false">
+							<i class="fa fa-bell text-center mr-1"></i> 
+							Notification
+						</a>						<a class="nav-link danger" id="danger-tab" data-toggle="pill" href="#danger" role="tab" aria-controls="danger" aria-selected="false">
+							<i class="fa fa-danger danger text-center mr-1"></i> 
+							Danger Zone
+						</a>
+					</div>
+				</div>
+				<div class="tab-content p-4 p-md-5" id="v-pills-tabContent">
+					<div class="tab-pane fade show active" id="account" role="tabpanel" aria-labelledby="account-tab">
+						<h3 class="mb-4">Personal Info</h3>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+								  	<label>Name</label>
+								  	<input type="text" id="name-input" class=" form-control" >
+								</div>
+							</div>
+							
+							<div class="col-md-6">
+								<div class="form-group">
+								  	<label>Color</label>
+								  	<input type="color" id="color" class="form-control">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+								  	<label>Avatar</label>
+								  	<button class=" " onclick="avatar()">Change avatar</button>
+								</div>
+							</div>
+							
+							
+							<div class="col-md-12">
+								<div class="form-group">
+								  	<label>Bio</label>
+									<textarea readonly class=" disabled muted form-control" style="resize: none;" rows="4">Feature coming soon!</textarea>
+								</div>
+							</div>
+						</div>
+						<div>
+							<button  onclick="saveName(); saveColor()">Update</button>
+						</div>
+					</div>
+
+
+					<div class="tab-pane fade" id="notification" role="tabpanel" aria-labelledby="notification-tab">
+						<h3 class="mb-4">Notification Settings</h3>
+						<div class="form-group">
+							<div class="form-check">
+								<input class="form-check-input toggle" type="checkbox" value="" id="notif">
+								<label class="form-check-label" for="notif">
+									Enable notifications
+								</label>
+							</div>
+						</div>
+						<div>
+							<button onclick="saveNotif()">Update</button>
+						</div>
+            </div>
+
+          
+            <div class="tab-pane fade" id="danger" role="tabpanel" aria-labelledby="danger-tab">
+						<h3 class=" danger mb-4">Danger Zone</h3>
+						<div class="form-group">
+								  	<button class=" danger" onclick="clearData()">Clear Data</button>
+								</div>
+						<div>
+						</div>
+        </div>
+					</div>
+        </div>
+			</div>
+		</div>
+	</section>
+
+<script src="/js/dash.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="//static.filestackapi.com/filestack-js/3.x.x/filestack.min.js"></script>
+
+<script src="/js/vex.min.js"></script>
+<script>vex.defaultOptions.className = 'vex-theme-os'</script>
+<link rel="stylesheet" href="/css/vex.css" />
+<link rel="stylesheet" href="/css/vex-theme-os.css" />
+</body></html>

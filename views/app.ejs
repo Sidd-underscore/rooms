@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script><script src="/js/vex.min.js"></script>
+<script>vex.defaultOptions.className = 'vex-theme-os'</script>
+<link rel="stylesheet" href="/css/vex.css" />
+<link rel="stylesheet" href="/css/vex-theme-os.css" />
+     <link rel="manifest" href="/manifest.json">
+
+     	<meta charset="utf-8">
+	<link rel="icon" href="/img/favicon.ico">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta name="theme-color" content="#1d2635">
+	<meta name="title" content="Rooms - The easiest (and freeest) way to chat">
+<meta name="description" content="Rooms offers text and video chatting, without saving anything to the cloud. Plus, it's FREE!">
+<script src="https://kit.fontawesome.com/58c1e58602.js" crossorigin="anonymous"></script>
+     <!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://rooms.cool-sidd.repl.co/">
+<meta property="og:title" content="Rooms - The easiest (and freeest) way to chat">
+<meta property="og:description" content="Rooms offers text and video chatting, without saving anything to the cloud. Plus, it's FREE!">
+<meta property="og:image" content="https://rooms.cool-sidd.repl.co/img/rooms.png">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://rooms.cool-sidd.repl.co/">
+<meta property="twitter:title" content="Rooms - The easiest (and freeest) way to chat">
+<meta property="twitter:description" content="Rooms offers text and video chatting, without saving anything to the cloud. Plus, it's FREE!">
+<meta property="twitter:image" content="https://rooms.cool-sidd.repl.co/img/rooms.png">
+<title>Rooms </title>
+<link rel="stylesheet" href="/css/style.css">
+ <script>
+      const ROOM_ID = "<%= roomId %>";
+
+    </script>
+   </head>
+   <body class="app" onload="load()">
+<main class="main">
+  <header class="header">
+  
+
+    
+<div style="    float: right;
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;" id="google_translate_element"></div>
+
+
+
+    </header>
+    <div class="containerlol">
+    <aside class="sidebar open" data-sidebar>
+      <div class="top-sidebar">
+        <a ><img class="channel-logo" src="" id="avatar" alt="Avatar"></a>
+        <div class="hidden-sidebar your-channel">Welcome,</div>
+        <div class="hidden-sidebar channel-name"></div>
+      </div>
+      <div class="middle-sidebar ">
+        <ul class="sidebar-list chatslist">
+
+        </ul>
+        <br>
+        <div style="    justify-content: center;" class="flex">
+        <div class="new-btn" onclick="newChat()">
+        <i class="fa  fa-plus"></i>
+        </div>
+        </div>
+      </div>
+      <div class="bottom-sidebar">
+        <ul class="sidebar-list">
+          <li class="sidebar-list-item" onclick="newChat()">
+            <a  class="sidebar-link">
+<svg class="sidebar-icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#FFFFFF"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>              <div class="hidden-sidebar">New Chat</div>
+            </a>
+          </li>
+          <li id="settings" class="sidebar-list-item">
+            <a href="#" class="sidebar-link">
+              <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false" class="sidebar-icon"><g><path d="M19.43 12.98c.04-.32.07-.64.07-.98s-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"></path></g></svg>
+              <div class="hidden-sidebar">Settings</div>
+            </a>
+          </li>
+          <li class="sidebar-list-item"  data-tf-popup="ErTt7tTb" data-tf-size="70" data-tf-iframe-props="title=Customer Feedback Survey" data-tf-medium="snippet">
+            <a href="#" class="sidebar-link">
+              <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false" class="sidebar-icon"><g><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 12h-2v-2h2v2zm0-4h-2V6h2v4z"></path></g></svg>
+              <div class="hidden-sidebar">Send Feedback</div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </aside>
+      <div class="main">
+         <div class="main__left">
+<div class="eyes">
+<div class="temp">
+<img src="/img/no_data.png"></img><br><p><strong>Your adventure starts here...</strong><br><button onclick="newChat()" style="margin-top: 10px; display: inline-block;"> Create a room?</button> </p>
+</div>
+<div style="display: none" class="chats-div">
+</div>
+</div>
+
+         </div>
+         <div id="settings-modal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+               <span class="close">&times;</span>
+               <iframe style="    height: 90%;" src="../../settings"></iframe>
+            </div>
+         </div>
+
+                 <div id="join-modal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+               <span class="close">&times;</span>
+<p><div class=" your-channel">Join</div><br><div id="name" class=" channel-name"></div></p>   <div class="container">
+
+	<div class="button big">
+		<div class="base"></div>
+		<input class="big" type="checkbox" id="push">
+		<label class="big" for="push"></label>
+		<div class="btn big"></div>
+	</div>
+	
+</div>         </div>
+         </div>
+      </div>
+      </div>
+      <div class="load"><div style="" id="loadingDiv">
+<svg class="pl" viewBox="0 0 128 128" width="128px" height="128px" xmlns="http://www.w3.org/2000/svg">
+	<defs>
+		<linearGradient id="pl-grad" x1="0" y1="0" x2="0" y2="1">
+			<stop offset="0%" stop-color="hsl(193,90%,55%)" />
+			<stop offset="100%" stop-color="hsl(223,90%,55%)" />
+		</linearGradient>
+	</defs>
+	<circle class="pl__ring" r="56" cx="64" cy="64" fill="none" stroke="hsla(0,10%,10%,0.1)" stroke-width="16" stroke-linecap="round" />
+	<path class="pl__worm" d="M92,15.492S78.194,4.967,66.743,16.887c-17.231,17.938-28.26,96.974-28.26,96.974L119.85,59.892l-99-31.588,57.528,89.832L97.8,19.349,13.636,88.51l89.012,16.015S81.908,38.332,66.1,22.337C50.114,6.156,36,15.492,36,15.492a56,56,0,1,0,56,0Z" fill="none" stroke="url(#pl-grad)" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="44 1111" stroke-dashoffset="10" />
+</svg><br>
+<br>
+<div id="ff">Loading...</div>
+        <br>        <div ><i>Source: <span  id="ff-source">Loading..</span></i></div>
+
+</div>
+<div>
+</main>
+<div id="menu">
+  <a id="menu-invite" onclick="invite()">
+   <i class="fa-solid fa fa-user-plus"></i> <p>Invite <span>Ctrl + Shift + I</span></p>
+  </a>
+
+  <hr />
+  <a id="menu-delete" onclick="deleteRooms()" class="danger">
+    <i class="fas fa-xs fa-trash-alt"></i> <p> Delete Room <span>Ctrl + ?!</span></p>
+  </a>
+
+</div>
+   </body>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/peerjs/1.3.2/peerjs.min.js"></script>    
+   <script src="/js/vex.min.js"></script>
+   <script>vex.defaultOptions.className = 'vex-theme-os'</script>
+   <script type="module" src="/js/firebase.js"></script>
+   <script src="/js/global.js"></script>
+   <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+   <script src="/js/main.js"></script>
+<script src="//embed.typeform.com/next/embed.js"></script>
+</html>

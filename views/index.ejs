@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="/js/vex.min.js"></script>
+<script>vex.defaultOptions.className = 'vex-theme-os'</script>
+<link rel="stylesheet" href="/css/vex.css" />
+<link rel="stylesheet" href="/css/vex-theme-os.css" />
+     	<meta charset="utf-8">
+     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+<link rel="manifest" href="/manifest.json">
+
+	<link rel="icon" href="/img/favicon.ico">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta name="theme-color" content="#1d2635">
+	<meta name="title" content="Rooms - The easiest (and freeest) way to chat">
+<meta name="description" content="Rooms offers text and video chatting, without saving anything to the cloud. Plus, it's FREE!">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://rooms.cool-sidd.repl.co/">
+<meta property="og:title" content="Rooms - The easiest (and freeest) way to chat">
+<meta property="og:description" content="Rooms offers text and video chatting, without saving anything to the cloud. Plus, it's FREE!">
+<meta property="og:image" content="https://rooms.cool-sidd.repl.co/img/rooms.png">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://rooms.cool-sidd.repl.co/">
+<meta property="twitter:title" content="Rooms - The easiest (and freeest) way to chat">
+<meta property="twitter:description" content="Rooms offers text and video chatting, without saving anything to the cloud. Plus, it's FREE!">
+<meta property="twitter:image" content="https://rooms.cool-sidd.repl.co/img/rooms.png">
+<title>Rooms </title>
+	<link href="/css/style.css" rel="stylesheet">
+ </head>
+<body >
+	<noscript>You need to enable JavaScript to run this app.</noscript>
+	<div id="root">
+		<div class="wrapper">
+			<div>
+				<header class="w-full z-30 header-nav-top fixed top-0 mb-24">
+					<div class="mx-auto md:px-6 lg:px-36">
+						<div class="flex items-center justify-between h-16 px-6 md:px-0 header-nav-inner">
+							<div class="flex-shrink-0 mr-6 cursor-pointer">
+								<a class="flex flex-row text-white" aria-label="Rooms - Home" href="/"><img loading="lazy" class="h-10 fill-current text-white logo_home" src="/img/rooms.png" alt="Rooms - Home" draggable="false"></a>
+							</div>
+							<nav class=" md:flex md:flex-grow">
+							
+								<ul class="flex flex-grow justify-end flex-wrap items-center" style="    float: right;
+    position: absolute;
+    right: 0;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    top: 10px;
+">
+									<a class="flex flex-row text-white outline-none no-underline hover:no-underline" aria-label="Rooms - App" href="/app">
+										<li class="launch primary__button" role="button" >Launch Rooms </li>
+									</a>
+								</ul>
+							</nav>
+						</div>
+					</div>
+				</header>
+				<div style=" height: 6rem;"></div>
+			</div>
+			<div class="AppLayout__DefaultLayout">
+				<center>
+					<div class="home-content-fade">
+						<div style="">
+							<h3 style="    line-height: 100px;" class="mt-40 md:mt-12 md:pt-12 text-heading font-bold text-white">Rooms makes it easier to <span id="main-text" style="height: auto;" class="text-gradient--primary inline-block"></span>!</h3> </div>
+						<h1 style="font-size: 1.5rem; padding: 10px; color:white" class="text-lg md:text-2xl font-semibold max-w-4xl mt-4 ml-4 mr-4">Rooms offers text and video chatting, without saving anything to the cloud. Plus, it's FREE!</h1>
+            <br><br>
+
+						<div class="mb-12 mt-6">
+							<a href="/app"  style="text-decoration: none;">
+								<button class="primary__button">Open in Browser</button>
+							</a>
+              <div id="splash-container">
+                          <img class="splash desktop" src="/img/Rooms text info.png">
+            <img class="splash mobile" src="/img/Rooms text info_mobile.png">
+              </div>
+						</div>
+            <br><br><br>
+					</div>
+					<div class="glow-image"></div>
+					<div class="pl-8 pr-8"></div>
+					<div class="flex flex-col justify-center mb-24 mt-12 text-left">
+						<div class="flex flex-col justify-center text-center mb-6">
+							
+						</div>
+					</div>
+					<div class="boxes border border-t-1 border-b-0 border-l-0 border-r-0"  >
+						<div class="mt-24">
+							<div class="font-bold text-gray-300 rounded-full bg-white flex items-center justify-center text-3xl" style="height: 64px;     border-radius: 9999px; width: 64px; background-color: rgb(56, 56, 56);">1</div>
+							<div class="grid grid-cols-1 justify-center pb-24 text-center max-w-6xl">
+								<div class="col-span-1 justify-center max-w-6xl text-center mr-6 ml-6 md:ml-auto md:mr-auto">
+									<h3 class="font-bold text-white text-4xl font-primary mt-6">Open the app</h3>
+									<p class="mt-2 mb-6 font-semibold text-lg max-w-3xl text-center flex ml-auto mr-auto" style="color: rgb(188, 192, 196);">Click that exciting button above to launch the app!</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="boxes border border-t-1 border-b-0 border-l-0 border-r-0" style="border-color: rgb(40, 40, 40);">
+						<div class="mt-24">
+							<div class="font-bold text-gray-300 rounded-full bg-white flex items-center justify-center text-3xl" style="height: 64px;     border-radius: 9999px; width: 64px; background-color: rgb(56, 56, 56);">2</div>
+							<div class="grid grid-cols-1 justify-center pb-24 text-center max-w-6xl">
+								<div class="col-span-1 justify-center max-w-6xl mr-6 ml-6 md:ml-auto md:mr-auto">
+									<h3 class="font-bold text-white text-4xl font-primary mt-6">Create a room</h3><br>
+									<p class="mt-2 mb-6 font-semibold text-lg text-center max-w-3xl mr-auto ml-auto" style="color: rgb(188, 192, 196);">Using the <button style="display: inline; padding: 9px;">Create a room?</button> button, create your first room! <br>Hooray for you 🥳!</p>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+					<div class="boxes border border-t-1 border-b-1 border-l-0 border-r-0" >
+						<div class="mt-24">
+							<div class="font-bold text-gray-300 rounded-full bg-white flex items-center justify-center text-3xl" style="height: 64px;     border-radius: 9999px; width: 64px; background-color: rgb(56, 56, 56);">3</div>
+							<div class="grid grid-cols-1 justify-center pb-24 text-center max-w-6xl">
+								<div class="col-span-1 justify-center mr-6 ml-6 md:ml-auto md:mr-auto">
+									<h3 class="font-bold text-white text-4xl font-primary mt-6">Share the link</h3>
+									<p class="mt-2 mb-6 font-semibold text-lg text-center max-w-3xl mr-auto ml-auto" style="color: rgb(188, 192, 196);">When you click on the invite button, you can send invite links to your friends, colleagues and family.</p>
+								</div>
+							
+							</div>
+						</div>
+					</div>
+          <br> <hr>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<br><br>
+					<div class="home-bg-part">
+						<div class="home-bg-area">
+							<div class="flex flex-row justify-center pb-48 pt-48 text-center max-w-6xl">
+								<div class="w-full flex flex-col justify-center text-center mr-6 ml-6 md:ml-auto md:mr-auto">
+									<h3 class="font-bold text-white text-3xl md:text-4xl font-primary">What exactly are you waiting for?</h3>
+                  <br>
+									<a class="center justify-center flex"  href="/app" style="text-decoration: none;">
+									<button class="primary__button mr-2 h-12 font-semibold">Launch Rooms</button>
+									</a>
+                  <br>
+								</div>
+							</div>
+						</div>
+					</div>
+				</center>
+			</div>
+      <footer>
+			<div class=" md:flex flex-col justify-center pt-8 pb-8 text-left border border-t-1 border-b-0 border-l-0 border-r-0" style="background-color: var(--main-dark); border-color: rgb(40, 40, 40); padding: 10px;">
+				<div class="text-gray-500 font-semibold grid grid-cols-2 pl-4 pr-4 md:pl-12 md:pr-12">
+					<div class="font-normal ">
+						<p class="text-center text-gray-500 mr-3">© 2022 Rooms <br><span class="muted">Rooms is made by a great person called <a href="https://sidd.is-a.dev" target="_blank">Sidd_</a></span></p></div>
+				
+				</div>
+			</div>
+		
+			</div>
+      </footer>
+		</div>
+	</div>
+
+</body><script src="/js/index.js"></script>
+    <script type="module" src="/js/firebase.js"></script>
+
+
+
+</html>
