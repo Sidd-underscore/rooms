@@ -17,6 +17,410 @@
 
 }
 
+button:focus, textarea:focus, input:focus, select:focus, option:focus, a:focus {
+  outline: 1px solid var(--primary-color) !important;
+}
+
+button, textarea, input, select, option, a {
+color: white;
+}
+
+
+#mouse-div {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background:red;
+}
+
+.powered-by-firepad {
+  display: none !important;
+}
+
+.firepad-btn {
+    transition: all 500ms;
+
+}
+
+
+a {
+    transition: all 500ms;
+
+}
+.firepad-btn:hover {
+  background-color: #509bff !important;
+  border-color: var(--primary-color) !important;
+}
+
+.firepad-dropdown-menu a:hover {
+    color: #fff;
+    text-decoration: none;
+    background-color: var(--primary-color) !important;
+}
+
+.firepad-dialog-div {
+    position: relative;
+    width: 400px;
+    height: 100px;
+    margin: 100px auto;
+    background-color: var(--main-darklg) !important;
+    border: 1px solid #eeeeee !important;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+body {
+  background-color: var(--main-darklg)
+}
+
+.ql-tooltip {
+  color: black !important;
+}
+.ql-toolbar.ql-snow {
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif !important;
+    padding: 8px;
+}
+
+
+.gfdsgds5654 {
+  height: 400px;
+
+}
+
+checklist {
+  width: 100%;
+}
+
+checklist ul {
+  margin: 0;
+    display: inline;
+margin-top: 50px;
+  margin-bottom: 10px;
+}
+
+checklist ul {
+  padding: 10px !important;
+  width: 90vw;
+margin-top: 150px;
+margin-bottom: 20px;
+}
+
+.status {
+  padding: 50px;
+  display: none;
+  text-align: center;
+  justify-content: center;
+}
+
+.firepad-userlist {
+  /* default height */
+  height: 400px;
+  min-width: 175px;
+
+  color: white;
+}
+
+.firepad-userlist {
+  text-align: left;
+  line-height: normal;
+  background-color: var(--main-darklg) !improtant;
+}
+
+.firepad-userlist-heading {
+  margin: 20px 15px 0;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.firepad-userlist-users {
+  position: absolute;
+  left: 15px;
+  right: 15px;
+  top: 38px;
+  bottom: 10px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.firepad-userlist-user {
+  position: relative;
+  margin: 3px 0;
+  height: 32px;
+  padding-bottom: 5px;
+}
+
+.firepad-userlist-color-indicator {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #ccc;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+input.firepad-userlist-name-input {
+    position: absolute;
+    left: 28px;
+    top: 0;
+    width: 113px;
+    height: 20px;
+    border: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    font-size: 14px;
+    line-height: 14px;
+    /* border: 1px solid white; */
+    padding: 1px;
+}
+
+#userlist {
+  resizable: horizontal;
+}
+
+.firepad-userlist-name-hint {
+  position: absolute;
+  left: 38px;
+  top: 23px;
+  width: 300px; /* I'd rather it clip than wrap. */
+  font-size: 9px;
+  line-height: 11px;
+}
+
+.firepad-userlist-name {
+    position: absolute;
+    top: 2px;
+    left: 28px;
+    width: 113px;
+    font-size: 13px;
+}
+
+.completed {
+  width: 100%;
+  display: flex;
+  height: 100px;
+  text-align: center;
+  max-height: calc(100% - 150px);
+  background-color: var(--main-dark);
+  overflow: auto;
+    transition: all 1s ease-in-out;
+  bottom: 0;
+    position: fixed;
+  border-top: 1px solid white;
+  z-index: 100000;
+  justify-content: center;
+}
+
+
+.completed div {
+  display: block;
+}
+
+.status div {
+  display: block;
+}
+
+.arrow.down {
+    width: 100%;
+    height: 25px;
+    display: none;
+    justify-content: center;
+    background-image: url("/img/expand_more.svg");
+    align-items: baseline;
+    /* flex-direction: row-reverse; */
+}
+
+
+.arrow {
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* background-size: cover; */}
+
+.arrow:not(.arrow.down) {
+    width: 100%;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    background-image: url("/img/expand_less.svg");
+    align-items: baseline;
+    /* flex-direction: row-reverse; */
+
+}
+
+.status img {
+  height: 300px;
+  width: 300px;
+}
+
+checklist .completed ul li {
+      width: 90vw;
+text-align: left;
+} 
+
+checklist .progress {
+  width: calc(100% - 2px);
+  height: 10px;
+  border: 0.5px solid white;
+}
+
+
+checklist .progress-inner {
+  height: 10px;
+  width: 0%;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+background: var(--primary-color);
+  animation: all 1s ease-in-out;
+
+}
+
+
+
+
+/* Style the list items */
+checklist ul li {
+    cursor: pointer;
+    position: relative;
+    border: 1px solid transparent;
+    padding: 12px 4px 12px 40px;
+    list-style-type: none;
+    border-radius: 10px;
+    margin: 10px;
+    font-size: 18px;
+    transition: 0.2s;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+checklist .text-container {
+      white-space: nowrap;
+    text-overflow: ellipsis;
+    width: calc(100% - 35px);
+    display: block;
+    overflow: hidden;
+}
+
+
+checklist ul li:hover {
+border: 1px solid white;
+}
+
+checklist ul li::before {
+border: 1px solid white;
+  content: '';
+  position: absolute;
+  border-color: #fff;
+  border-style: solid;
+  left: 16px;
+  height: 15px;
+  top: 16px;
+  width: 15px;
+  border-radius: 50%;
+}
+
+checklist ul li.checked {
+  opacity: 0.5;
+  color: #fff;
+
+  text-decoration: line-through;
+}
+
+/* Add a "checked" mark when clicked on */
+checklist ul li.checked::before {
+  content: '';
+  position: absolute;
+  border-color: #fff;
+  opacity: 1 !important;
+  border-style: solid;
+      border-radius: 0px;
+
+  border-width: 0 2px 2px 0;
+  top: 13px;
+  left: 18px;
+  transform: rotate(45deg);
+  height: 15px;
+  width: 7px;
+}
+
+
+
+/* Style the close button */
+checklist .close {
+    position: absolute;
+    right: 0;
+    display: flex;
+    top: 0;
+    height: 30px;
+    padding: 10px;
+    width: 24px;
+  border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+checklist .close:hover {
+  background-color: #f44336;
+  color: white;
+}
+
+/* Style the header */
+checklist .header {
+  padding: 30px 40px;
+  color: white;
+  height: 50px;
+  text-align: center;
+}
+
+/* Clear floats after the header */
+checklist .header:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the input */
+checklist input {
+    margin: 0;
+    border: 1px solid white;
+    border-radius: 5px;
+    width: 75%;
+    padding: 10px;
+    height: 24px;
+    float: left;
+    font-size: 16px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+/* Style the "Add" button */
+.addBtn {
+    padding: 10px !important;
+    width: 25% !important;
+    height: 46px !important;
+    left: 35px !important;
+    background: #d9d9d9 !important;
+    color: #555 !important;
+    float: left !important;
+    border-left: none !important;
+    text-align: center !important; 
+    transition: 0.3s !important;
+    border-radius: 5px !important;
+    border-top-left-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+}
+
+.addBtn:hover {
+  background-color: #bbb !important;
+  color: black !important;
+}
+
 
 .pl,
 .pl__worm {
@@ -39,6 +443,9 @@
 }
 
 
+div.CodeMirror-cursors .CodeMirror-cursor {
+  width: 24px !important;
+}
 /* Animations */
 @keyframes bump {
 	from,
@@ -128,19 +535,27 @@ input[type="checkbox"].toggle + label {
 
 
 button, .button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: auto;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  text-align: center;
-  line-height: 1.1;
-  text-decoration: none;
-  white-space: nowrap;
-  border-radius: 4px;
-  border: 1px solid #ddd;
-  cursor: pointer;
+
+    border-radius: 6px;
+    margin-left: -1px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    padding: 6px 6px 4px 6px;
+    text-align: center;
+  transition: all 250ms;
+    vertical-align: middle;
+    background-color: #fcfcfc;
+    border: 1px solid #c9c9c9;
+    border-bottom-width: 4px;
+    color: #9c9c9c;
+}
+
+button:hover, .button:hover {
+      color: #fff !important;
+    text-decoration: none;
+      background-color: #509bff !important;
+    border-color: var(--primary-color) !important;
 }
 
 .fa-send {
@@ -279,7 +694,6 @@ input[type="checkbox"].toggle:disabled + label {
 }
 
 #join-modal * {
-  	box-sizing: border-box;	
 	transform-style: preserve-3d;
 }
 
@@ -313,10 +727,10 @@ select, input {
 	font-size: 100%;
   padding: 3px;
 border-radius: 5px;
+  color: white !important;
 border: 1px solid white;
 background-color: transparent;
 	line-height: 1.15;
-  color: white !important;
 	margin: 0
 }
 
@@ -349,6 +763,7 @@ option {
     text-align: center;
 }
 
+
 .hidden-sidebar {
     text-overflow: ellipsis;
     overflow: hidden;
@@ -356,7 +771,6 @@ option {
 
 html {
   color: white !important;
-    background-color: var(--main-darklg);
 
 }
 
@@ -368,9 +782,7 @@ html {
   display: block;
 }
 
-.mobile {
-  display: none;
-}
+
 
 .text-center {
   text-align: center;
@@ -401,6 +813,10 @@ html {
 
 .table {
 	display: table
+}
+
+.mobile .CodeMirror {
+  top: 121px !important;
 }
 
 .grid {
@@ -714,11 +1130,7 @@ nav a {
 
 }
 
-.launch, .primary__button {
-  background-color: var(--main-darklg);
-  padding: 10px;
-  border-radius: 10px;
-}
+
 .navbar-link {
 	transition: all .2s ease-in-out;
 	cursor: pointer;
@@ -744,8 +1156,10 @@ nav a {
 }
 
 #join-modal .your-channel {
-  font-size: 24px;
-}
+    font-size: 24px;
+    /* width: 90%; */
+    display: flex;
+    justify-content: center;}
 
 .logo_home {
 	z-index: 999999!important;
@@ -830,35 +1244,9 @@ video {
   display: flex;
 }
 
- button, .options__button {
-    	border: 1px solid white;
-    transition: 250ms ease-in;
-
-    justify-content: center;
-    align-items: center;
-    background-color: var(--primary-color);
-    color: var(--main-light);
-    font-size: 14px;
-    padding: 3.5px;
-    /* margin: -3.5rem; */
-    cursor: pointer;
-        display: block;
-    height: calc(1.5em + 0.75rem + 2px);
-    padding: 0.375rem 0.75rem;
-    line-height: 1.5;
-    background-clip: padding-box;
-    border-radius: 0.25rem;
-}
 
 
 
-
- button:hover, .options__button:hover {
-  background-color: var(--main-dark);
-    transition: 250ms ease-in;
-   color: white !important;
-
-}
 
 .options__button:hover {
   width: 48px;
@@ -978,13 +1366,16 @@ video {
 	color: #fff;
 }
 
-.mobile {
-  display: none;
-}
 
 @media (max-width: 700px) {
   body {
     font-size: 15px;
+  }
+  img.mobile {
+    display: block;
+  }
+  img[src="/img/share-link.svg"] {
+    display: none;
   }
   .transition-1 {
     height: 100px !important;
@@ -1001,7 +1392,10 @@ video {
   .stuff{
     justify-content: flex-start !important;
       }
-
+aside {
+  display: flex !important;
+  width: 100vw !important;
+}
 	.modal-content {
 		width: 100% !important;
 		height: 100% !important;
@@ -1014,6 +1408,9 @@ video {
   max-height: 100% !important;
   max-width: 100% !important;
 }
+  div .main {
+    display: none;
+  }
 }
 
 
@@ -1346,6 +1743,10 @@ hr {
 	width: 100vw;
 }
 
+img.mobile {
+  display: none;
+}
+
 input,
 input:focus,
 input:focus-visible {
@@ -1353,9 +1754,19 @@ input:focus-visible {
 }
 
 .primary__button {
-  color: var(--primary-color) !important;
-  border: 1px solid var(--primary-color) !important;
+  height: 43px !important;
+    width: 167px !important;
+    color: var(--primary-color);
+    font-family: 'Poppins', 'sans-serif' !important;
+
+    font-size: 15px;
 }
+
+.primary__button:hover {
+
+  color: white;
+}
+
 
 .boxes {
       margin: 6rem;
@@ -1398,8 +1809,26 @@ input:focus-visible {
 	}
 
 
+.firepad-richtext .CodeMirror {
+    font-family: 'Poppins', sans-serif !important;
+    border-radius: 10px;
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    border: none;
+}
 
-
+.firepad-toolbar {
+    height: 82px;
+    line-height: 82px;
+    padding-left: 10px;
+     border-bottom: 0 !important;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
 .glow-image, .glow-image-secondary {
     will-change: contents;
     -webkit-backface-visibility: hidden;
@@ -1407,12 +1836,12 @@ input:focus-visible {
     transform: translateZ(0);
     position: absolute;
     left: 0;
-    top: 174px;
+    top: -231px;
     bottom: 0;
     height: 888px;
     right: 0;
     pointer-events: none;
-    background: conic-gradient(from 230.29deg at 51.63% 52.16%, var(--primary-color) 0deg, #121212 67.5deg, #242424 198.75deg, var(--primary-color) 251.25deg, var(--primary-color) 301.88deg, var(--primary-color) 1turn);
+    background: conic-gradient(from 230.29deg at 51.63% 52.16%,var(--primary-color) 0deg,#121212 67.5deg,#242424 198.75deg,var(--primary-color) 251.25deg,var(--primary-color) 301.88deg,var(--primary-color) 1turn);
     -webkit-filter: blur(160px);
     filter: blur(160px);
     z-index: -1;
@@ -1428,7 +1857,6 @@ input:focus-visible {
 #chat_message:hover, #chat_message:hover {
 	box-shadow: 3px 3px var(--primary-color);
 }
-
 
 
 
@@ -1561,12 +1989,11 @@ display: flex;
 }
 
 .file {
-    border: 1px solid white;
     border-radius: 5px;
-    width: 215px;
+    width: 237px;
     padding: 10px;
     display: flex;
-    margin: 10px;
+    margin-left: 50px;
     align-content: center;
     align-items: center;
 }
@@ -1599,8 +2026,10 @@ a:hover {
     white-space: nowrap;
     display: inline-block;
     font-size: 15px;
+    padding-top: 10px;
     text-overflow: ellipsis;
     overflow: hidden;
+    font-style: normal !important;
 }
 
 .file .material-icons, .file .material-icons-outlined {
@@ -1887,20 +2316,21 @@ border: 1px solid white;
 }
 
 .sidebar {
-  flex-shrink: 0;
-  overflow: hidden;
-  width: 75px;
-  border-right: 1px solid darkgrey;
-  display: flex;
-  flex-direction: column;
-  height: calc(98vh - 51px);
-  padding-top: 1rem;
-  align-items: center;
-  justify-content: stretch;
-  transition: width  ease-in-out;
-  position: sticky;
-  left: 0;
-  top: 51px;
+    flex-shrink: 0;
+    overflow: hidden;
+    width: 75px;
+    border-right: 1px solid darkgrey;
+    display: flex;
+    flex-direction: column;
+    height: 98vh;
+    padding-top: 1rem;
+    align-items: center;
+    justify-content: stretch;
+    transition: width  ease-in-out;
+    position: sticky;
+    left: 0;
+    top: 51px;
+  max-width: 25%;
 }
 
 .sidebar .hidden-sidebar {
@@ -2024,23 +2454,34 @@ border: 1px solid white;
     content: "JOIN NOW";
     width: 100%;
     height: 25vmin;
+    overflow: hidden;
     position: absolute;
     border-radius: 14vmin;
     top: -2vmin;
     z-index: -1;
     box-sizing: border-box;
     border-bottom-width: 0.25vmin;
-    font-family: 'Londrina Solid', Arial, Helvetica, serif;
-    font-size: 11vmin;
+    /* font-family: 'Londrina Solid', Arial, Helvetica, serif; */
+    font-size: 60px;
     line-height: 22vmin;
     transform: rotateX(10deg);
     transform-origin: center top;
     font-weight: bold;
-    letter-spacing: 0.5vmin;
+    /* letter-spacing: 0.5vmin; */
     text-shadow: 0px 1px 0px #999, 0px 2px 0px #888, 0px 3px 0px #777, 0px 4px 0px #666, 0px 5px 0px #555, 0px 6px 0px #444, 0px 7px 0px #333, 0px 8px 7px #001135;
 }
 
+.container .button.big {
+    border: none;
+    text-align: inherit;
+    margin-bottom: 100px;
+    outline: none;
+    background-color: var(--main-darklg);
+}
 
+.button.big input {
+  outline: none;
+}
 
 
 
@@ -2188,8 +2629,9 @@ input.big:checked ~ .btn.big:before {
   width: 100%;
 }
 
-.eyes img {
-  max-height: 260px;
+.eyes svg {
+  height: 275px;
+  width: 275px;
 }
 
 

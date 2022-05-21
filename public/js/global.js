@@ -54,8 +54,8 @@ urlthing.textContent = datalol.shortLink
      "option": "UNGUESSABLE"
    },
     "dynamicLinkInfo": {
-    "link": 'https://rooms.cool-sidd.repl.co/app?${active_chat}',
-    "domainUriPrefix": "https://roomss.page.link"
+    "link": 'https://roomss.tk/app?${active_chat}',
+    "domainUriPrefix": "https://invite.roomss.tk/join"
 
   }
 }`;

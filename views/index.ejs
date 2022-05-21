@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
    <head>
+     <!-- Hotjar Tracking Code for https://rooms.cool-sidd.repl.co/ -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:2916991,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="/js/vex.min.js"></script>
 <script>vex.defaultOptions.className = 'vex-theme-os'</script>
@@ -33,43 +44,30 @@
 <meta property="twitter:image" content="https://rooms.cool-sidd.repl.co/img/rooms.png">
 <title>Rooms </title>
 	<link href="/css/style.css" rel="stylesheet">
+     <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-216345212-1">
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-216345212-1');
+</script>
  </head>
 <body >
 	<noscript>You need to enable JavaScript to run this app.</noscript>
 	<div id="root">
 		<div class="wrapper">
 			<div>
-				<header class="w-full z-30 header-nav-top fixed top-0 mb-24">
-					<div class="mx-auto md:px-6 lg:px-36">
-						<div class="flex items-center justify-between h-16 px-6 md:px-0 header-nav-inner">
-							<div class="flex-shrink-0 mr-6 cursor-pointer">
-								<a class="flex flex-row text-white" aria-label="Rooms - Home" href="/"><img loading="lazy" class="h-10 fill-current text-white logo_home" src="/img/rooms.png" alt="Rooms - Home" draggable="false"></a>
-							</div>
-							<nav class=" md:flex md:flex-grow">
-							
-								<ul class="flex flex-grow justify-end flex-wrap items-center" style="    float: right;
-    position: absolute;
-    right: 0;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    margin-left: 10px;
-    top: 10px;
-">
-									<a class="flex flex-row text-white outline-none no-underline hover:no-underline" aria-label="Rooms - App" href="/app">
-										<li class="launch primary__button" role="button" >Launch Rooms </li>
-									</a>
-								</ul>
-							</nav>
-						</div>
-					</div>
-				</header>
+			
 				<div style=" height: 6rem;"></div>
 			</div>
 			<div class="AppLayout__DefaultLayout">
 				<center>
 					<div class="home-content-fade">
 						<div style="">
-							<h3 style="    line-height: 100px;" class="mt-40 md:mt-12 md:pt-12 text-heading font-bold text-white">Rooms makes it easier to <span id="main-text" style="height: auto;" class="text-gradient--primary inline-block"></span>!</h3> </div>
+							<h3 style="    line-height: 100px;" class="mt-40 md:mt-12 md:pt-12 text-heading font-bold text-white">Rooms makes it <br>easier to <span id="main-text" style="height: auto;" class="text-gradient--primary inline-block"></span>!</h3> </div>
 						<h1 style="font-size: 1.5rem; padding: 10px; color:white" class="text-lg md:text-2xl font-semibold max-w-4xl mt-4 ml-4 mr-4">Rooms offers text and video chatting, without saving anything to the cloud. Plus, it's FREE!</h1>
             <br><br>
 
@@ -110,7 +108,7 @@
 									<h3 class="font-bold text-white text-4xl font-primary mt-6">Create a room</h3><br>
 									<p class="mt-2 mb-6 font-semibold text-lg text-center max-w-3xl mr-auto ml-auto" style="color: rgb(188, 192, 196);">Using the <button style="display: inline; padding: 9px;">Create a room?</button> button, create your first room! <br>Hooray for you 🥳!</p>
 								</div>
-								
+
 							</div>
 						</div>
 					</div>
@@ -122,7 +120,7 @@
 									<h3 class="font-bold text-white text-4xl font-primary mt-6">Share the link</h3>
 									<p class="mt-2 mb-6 font-semibold text-lg text-center max-w-3xl mr-auto ml-auto" style="color: rgb(188, 192, 196);">When you click on the invite button, you can send invite links to your friends, colleagues and family.</p>
 								</div>
-							
+							<img src="/img/share-link.svg">
 							</div>
 						</div>
 					</div>
@@ -155,7 +153,7 @@
 			<div class=" md:flex flex-col justify-center pt-8 pb-8 text-left border border-t-1 border-b-0 border-l-0 border-r-0" style="background-color: var(--main-dark); border-color: rgb(40, 40, 40); padding: 10px;">
 				<div class="text-gray-500 font-semibold grid grid-cols-2 pl-4 pr-4 md:pl-12 md:pr-12">
 					<div class="font-normal ">
-						<p class="text-center text-gray-500 mr-3">© 2022 Rooms <br><span class="muted">Rooms is made by a great person called <a href="https://sidd.is-a.dev" target="_blank">Sidd_</a></span></p></div>
+						<p class="text-center text-gray-500 mr-3">© 2022 Rooms <br><br><a target="_blank" href="https://storyset.com/">Illustrations by Storyset</a><br><span class="muted">Rooms is made by a great person called <a href="https://sidd.is-a.dev" target="_blank">Sidd_</a></span></p></div>
 				
 				</div>
 			</div>

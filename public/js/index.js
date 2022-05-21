@@ -4,12 +4,12 @@ const { Typed } = window;
 
 const typed2 = new Typed('#main-text', {
   strings: [
-    "talk", "chat", "connect", "communicate"
+    "talk", "chat", "connect", "communicate", "collaborate"
 
   ],
   typeSpeed: 80,
   backSpeed: 60,
-  smartBackspace: true,
+  smartBackspace: false,
   loop: true,
   shuffle: false,
   backDelay: 1000,

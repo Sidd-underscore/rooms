@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
    <head>
       <title id="title">Rooms | Text</title>
@@ -20,9 +19,50 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css">
       <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
       <link rel="stylesheet" href="https://cdn.quilljs.com/1.3.6/quill.bubble.css">
+ <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-database.js"></script>
+         <meta name="viewport" content="width=device-width, initial-scale=1" />
+
       <script>
          const ROOM_ID = "<%= roomId %>";
       </script>
+     <style>
+
+#messages{
+    padding-bottom: 30%;
+}
+
+       li img {
+             height: 40px;
+    width: 40px;
+    position: relative;
+    top: 30px;
+    margin-left: 0;
+       }
+
+       li p {
+             margin-left: 60px;
+    margin-top: 10px;
+         
+       }
+li {
+    list-style-type: none;
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 10px;
+    color: white;
+    width: 50%;
+}
+
+li span {
+    font-style: italic;
+  padding: 5px;
+  border-radius: 5px;
+    color: white;
+}
+     </style>
    </head>
    <body style="height: 98vh; width: 100vw; background-color: transparent !important;" onunload="bye()">
       <div class="main__chat_window"  >
@@ -103,12 +143,10 @@
 </div>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.8.6/showdown.min.js"></script>
       <script src="/js/global.js"></script>
-      <script src="/socket.io/socket.io.js"></script>
-      <script src="/js/group.js"></script>
       <script src="/js/vex.min.js"></script>
       <script src="//static.filestackapi.com/filestack-js/3.x.x/filestack.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
-      <script></script>
+     <script src="/js/group.js"></script>
       <script>vex.defaultOptions.className = 'vex-theme-os'</script>
       <script type="module" src="/js/firebase.js"></script>
      <!-- no important, but kinda -->

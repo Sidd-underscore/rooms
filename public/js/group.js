@@ -1,7 +1,3 @@
-
-
-
-
 let focus = true;
 
 function onBlur() {
@@ -9,8 +5,31 @@ function onBlur() {
 
 };
 
-let unread = 0;
+const totes = window.location.href.replaceAll('.', '').slice(-10);
 
+
+let unread = 0;
+const config = {
+  apiKey: "AIzaSyA09XIhl6Oqn1LOqYFU0ZUzrhiHgNAlRyk",
+  authDomain: "rooms-326702.firebaseapp.com",
+  databaseURL: "https://rooms-326702-default-rtdb.firebaseio.com",
+  projectId: "rooms-326702",
+  storageBucket: "rooms-326702.appspot.com",
+  messagingSenderId: "824085801611",
+  appId: "1:824085801611:web:c6eb92a61624ddbe50428e",
+  measurementId: "G-DNQFMVDRCJ",
+  databaseURL: "https://rooms-326702-default-rtdb.firebaseio.com"
+};
+
+
+
+firebase.initializeApp(config);
+const db = firebase.database();
+
+var ref = firebase.database().ref();
+ref = ref.child(totes);
+
+console.log('Firebase data: ', ref.toString());
 
 function onFocus() {
   revertTitle("Rooms")
@@ -18,6 +37,43 @@ function onFocus() {
   unread = 0;
 
 };
+
+
+const fetchChat = db.ref('messages/' + totes);
+
+fetchChat.on("child_added", function(snapshot) {
+  const messages = snapshot.val();
+
+  const message = `<li><img src="${messages.avatar}"><span style="background-color: ${messages.color}">${messages.person}:</span> <span class="date muted">` + messages.date + `</span>${messages.val}</li>`;
+  document.querySelector(".messages").innerHTML += message;
+
+
+
+
+
+  const barHTML = `<div class="bar"><p>You left off here<br><p class="muted"><i>Send a message or click <span style="text-decoration: underline; cursor: pointer;" onclick="dismiss('.bar')">here</span> to dismiss this message.</p></p></div>`
+
+  if (focus === false) {
+    unread = unread + 1;
+    if (!document.querySelector('.bar')) {
+      messages.innerHTML += barHTML;
+    }
+    setTitle(unread)
+    if (thin === 'yes') {
+      sendNotif(message)
+    }
+  }
+
+
+
+  var objDiv = document.querySelector(".messages");
+  if (focus === true) {
+    objDiv.scrollTop = objDiv.scrollHeight + 10;
+  }
+  if (message.person === person) {
+    dismiss('.bar');
+  }
+});
 
 if (/*@cc_on!@*/false) { // check for Internet Explorer
   document.onfocusin = onFocus;
@@ -71,79 +127,32 @@ function getFontAwesomeIconFromMIME(mimeType) {
 
 
 
-var socket = io();
-
-var socket_check = io.connect();
-
-
-let offline = 'false'
-function hmmmm() {
-  var result = socket_check.connected;
-  if (result === false) {
-    offline = 'true'
-    $('body').append(`<div class="load"><div style="" id="loadingDiv">
-<h1 style="font-size: 75%;">🙈 It seems you are Offline. Please connect to the internet and click the button below.</h1><br>
-<button onclick="window.location.reload()">Retry</button>
-</div>
-<div>`);
-  }
-}
 const thin = localStorage.getItem('notifs')
 
 
-const totes = window.location.href;
 
 
+// Get the input field
+var input = document.getElementById("chat_message");
+let newLine = false
+input.addEventListener('keydown', function(e) {
+  const keyCode = e.which || e.keyCode;
 
+  if (keyCode === 13 && !e.shiftKey) {
+    e.preventDefault();
+    sendMsg()
 
-
-
-
-
-// ON CHANGE
-const barHTML = `<div class="bar"><p>You left off here<br><p class="muted"><i>Send a message or click <span style="text-decoration: underline; cursor: pointer;" onclick="dismiss('.bar')">here</span> to dismiss this message.</p></p></div>`
-let messages = document.querySelector(".messages");
-
-socket.on(totes, function(msg) {
-  if (focus === false) {
-    unread = unread + 1;
-    if (!document.querySelector('.bar')) {
-      messages.innerHTML += barHTML;
-    }
-    setTitle(unread)
-    if (thin === 'yes') {
-      sendNotif(msg)
-    }
-  }
-  if (msg.default === true) {
-    messages.innerHTML += `<span id="msg">
-  <span style="background-color: ${msg.color}" class=\"person\"><img class="pfp" src="${msg.avatar}" style="background-color: ${msg.color};">${msg.user}</span><span class="date muted"> ${msg.time} </span><br>    ${msg.msg}</span>`;
-
-  } else if (msg.default === false) {
-    messages.innerHTML += msg.msg
-  }
-
-
-  var objDiv = document.querySelector(".messages");
-  if (focus === true) {
-    objDiv.scrollTop = objDiv.scrollHeight + 10;
-  }
-  if (msg.user === person) {
-    dismiss('.bar');
   }
 });
+
+
+
 
 function dismiss(identifier) {
   $(identifier).remove()
 
 }
 
-
-function video() {
-  const code = makeId(10)
-  window.open(`../../video/${code}`, '_blank');
-  sendMsg(`<span id="msg"><span style="background-color: ${color}" class=\"person\">${person}</span><span class="date muted">` + getCoolDate() + `</span><br>    Join my video call! <button class=\"chat-btn\" onclick=\"window.open(\`../../video/${code}\`, '_blank');\">Join</button></span><br>`)
-}
 
 $('.scrollleft').click(function() {
   $('.stuff').animate({
@@ -184,35 +193,8 @@ function getCoolDate() {
   return output;
 }
 
-// Get the input field
-var input = document.getElementById("chat_message");
-let newLine = false
-// Execute a function when the user releases a key on the keyboard
-input.addEventListener('keydown', function (e) {
-    // Get the code of pressed key
-    const keyCode = e.which || e.keyCode;
 
-    // 13 represents the Enter key
-    if (keyCode === 13 && !e.shiftKey) {
-        // Don't generate a new line
-        e.preventDefault();
-sendMsg()
-        // Do something else such as send the message to back-end
-        // ...
-    }
-});
 
-$('#chat_message').on('keydown', function(event) {
-  if (event.keyCode == 13 && !event.shiftKey) {
-    $(this).trigger(jQuery.Event("keydown", {
-      keyCode: 13, // ENTER
-      shiftKey: true
-    }));
-  } else if (event.keyCode == 13 && event.shiftKey) {
-    newLine = true
-
-      }
-});
 
 
 function afk() {
@@ -244,17 +226,14 @@ function sendNotif(msg) {
     // create and show the notification
     const showNotification = () => {
       // create a new notification
-      const notification = new Notification(msg.user + ' just sent a message in a room 👀', {
-        body: msg.msg.replace(/<[^>]*>?/gm, ''),
+      var n = window.webkitNotifications.createNotification(msg.avatar, msg.person + ' sent a message in a Room', msg.val.replace(/<[^>]*>?/gm, ''));
+      n.onclick = function(x) { window.focus(); this.close(); };
 
-
-        icon: msg.avatar
-      });
 
 
       // close the notification after 10 seconds
       setTimeout(() => {
-        notification.close();
+        n.close();
       }, 5000);
 
     }
@@ -269,10 +248,10 @@ function sendNotif(msg) {
     // check notification permission
     let granted = false;
 
-    if (Notification.permission === 'granted') {
+    if (window.webkitNotifications.permission === 'granted') {
       granted = true;
-    } else if (Notification.permission !== 'denied') {
-      let permission = await Notification.requestPermission();
+    } else if (window.webkitNotifications.permission !== 'denied') {
+      let permission = await window.webkitNotifications.requestPermission();
       granted = permission === 'granted' ? true : false;
     }
 
@@ -289,7 +268,6 @@ var length = quill.getLength();
 function tryBeta() {
   alert('nothing to try...\n\n\n\n\n\n\n\n\n\nyet')
 }
-var socket = io();
 // Return the HTML content of the editor
 function getQuillHtml() {
   return quill.root.innerHTML;
@@ -332,84 +310,70 @@ function file(res) {
   xhttp.open('HEAD', url);
   xhttp.onreadystatechange = function() {
     if (this.readyState == this.DONE) {
-      console.log(this.status);
-      console.log(this.getResponseHeader("Content-Type"));
+      var person = localStorage.getItem('person')
+      var avatar = localStorage.getItem('avatar')
+      var color = localStorage.getItem('color')
+      var val = `<span id="file">        <br> <div class="file"> <div class="file-inner"><span class="material-icons-outlined">` + getFontAwesomeIconFromMIME(`${res.filesUploaded.map(({ mimetype }) => mimetype)}`) + `</span><h1><span class="file-name">` + res.filesUploaded.map(({ filename }) => filename) + '</span>    <a target="blank"  href="' + res.filesUploaded.map(({ url }) => url) + '"><span class="material-icons">launch</span></a></h1></div></div></span><br>'
+      var date = getCoolDate()
+      const timestamp = Date.now();
+      console.log(val + person + avatar + color)
 
-      console.log(res.filesUploaded)
-      socket.emit("update", {
-                id: totes,
-        color: color,
-        default: true,
-        avatar: avatar,
-        time: getCoolDate(),
-        user: person,
-        msg: `<span id="file">        <br> <div class="file"> <div class="file-inner"><span class="material-icons-outlined">` + getFontAwesomeIconFromMIME(`${res.filesUploaded.map(({ mimetype }) => mimetype)}`) + `</span><h1><span class="file-name">` + res.filesUploaded.map(({ filename }) => filename) + '</span>    <a target="blank"  href="' + res.filesUploaded.map(({ url }) => url) + '"><span class="material-icons">launch</span></a></h1></div></div></span><br>'
+      //auto scroll to bottom
+      document.querySelector(".messages").scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
 
-      });
+      // create db collection and send in the data
+      db.ref('messages/' + totes + '/' + timestamp).set({ person, val, avatar, color, date });
 
 
-      var x = document.getElementById("snackbar");
-      x.className = "show success";
-      setTimeout(function() {
-        x.className = x.className.replace("show success", "");
-      }, 3000);
+
     }
   };
   xhttp.send();
 }
 
+
+
 function sendMsg(uh) {
   if (!uh) {
+    var person = localStorage.getItem('person')
+    var avatar = localStorage.getItem('avatar')
+    var color = localStorage.getItem('color')
+    var val = quill.root.innerHTML.replace("<p><br></p>", "");
 
-    if (person) {
-      function clearcontent(element) {
-        document.querySelector(element).innerHTML = "";
-      }
-      socket.emit("update", {
-        id: totes,
-        user: person,
-        color: color,
-        default: true,
-        avatar: avatar,
-        time: getCoolDate(),
-        msg: updateHtmlOutput()
-      });
+    var date = getCoolDate()
+    const timestamp = Date.now();
+    console.log(val + person + avatar + color)
 
+    //auto scroll to bottom
+    document.querySelector(".messages").scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
 
-
-      quill.root.innerHTML.innerHTML = "";
-      clearcontent('.ql-editor')
+    // create db collection and send in the data
+    db.ref('messages/' + totes + '/' + timestamp).set({ person, val, avatar, color, date });
 
 
-    } else {
-      var x = document.getElementById("snackbar");
-      x.className = "show error";
-      x.innerHTML = "ERROR: You appear to not have a nickname! Please refresh this page to give you one!"
-      setTimeout(function() {
-        x.className = x.className.replace("show error", "");
-        x.innerHTML = "Message sent!"
-      }, 3000);
-    }
-
-
-
-
+    quill.root.innerHTML = "";
   } else {
-    socket.emit("update", {
-      id: totes,
-      user: '[System Update]',
-      color: color,
-      avatar: avatar,
-      default: false,
-      time: getCoolDate(),
-      msg: uh + "<br>"
-    });
 
 
+    var val = uh
+    const timestamp = Date.now();
+    var date = getCoolDate()
 
+    var person = '[SYSTEM UPDATE]'
+    var avatar = 'https://roomss.tk/img/bot.svg'
+    var color = '#2f80ec'
+    //auto scroll to bottom
+    document.querySelector(".messages").scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
+
+    // create db collection and send in the data
+    db.ref('messages/' + totes + '/' + timestamp).set({ person, val, avatar, color, date });
+
+
+    quill.root.innerHTML = "";
 
   }
 }
+
 
 window.onload(welcome())
 window.onload(setInterval(hmmmm, 1000))
@@ -429,24 +393,17 @@ function getFact() {
 
 function welcome() {
   getFact()
-  sendMsg(`<div class="system-update"><span class="person" style="background-color: ${color}">${person}</span> just joined! ` + getFact() + ` <span class="date muted">` + getCoolDate() + `</span></div>`)
+  sendMsg(`<p style="    top: 11px;
+    position: relative;" ><span class="person" style="background-color: ${color}">${person}</span> just joined! ` + getFact() + ` </p>`)
 }
 
-document.addEventListener("visibilitychange", function() {
-  if (document.visibilityState == 'hidden') {
-    if (focus === true) {
-      afk()
-    }
-  }
-})
+
 
 
 
 
 function bye() {
-  sendMsg(`<div class="system-update"><span class="person" style="background-color: ${color}">${person}</span> just left!<span class="date muted">` + getCoolDate() + `</span></div>`)
+  sendMsg(`<p style="    top: 11px;
+    position: relative;"><span class="person" style="background-color: ${color}">${person}</span> just left!</p>`)
 
 }
-
-
-
